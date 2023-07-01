@@ -1,0 +1,25 @@
+create a docker network
+`
+docker network create my-network
+`
+
+Build the kafka image using:
+`
+docker build -t kafka-zookeeper .
+`
+
+run kafka container
+`
+docker run -d -p 2181:2181 -p 9092:9092 --network my-network --name kafka-container kafka-zookeeper
+`
+
+Access the container:
+`
+docker exec -it my-kafka-container <command>
+`
+
+Example Command:
+Create a Kafka Topic:
+`
+docker exec -it my-kafka-container kafka-topics.sh --create --topic my-topic --bootstrap-server localhost:9092 --partitions 1 --replication-factor 1
+`
