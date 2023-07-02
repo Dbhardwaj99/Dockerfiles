@@ -1,6 +1,6 @@
-# Dockerfiles Repository
+# Dockerfiles
 
-Welcome to the Dockerfiles Repository! 🐳✨
+Welcome to the Dockerfiles! 🐳✨
 
 This repository is a collection of Dockerfiles for various popular open-source projects. It aims to provide a convenient way to package and distribute these projects using Docker containers. Currently, the repository includes a Dockerfile for Apache Kafka.
 
