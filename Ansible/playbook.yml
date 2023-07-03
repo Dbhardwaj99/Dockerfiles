@@ -1,6 +1,7 @@
 ---
 - name: Check Kafka service
-  hosts: 172.17.0.2:9092
+  hosts: localhost
+  gather_facts: false
   tasks:
     - name: Check if Kafka service is running
       shell: ps -ef | grep kafka | grep -v grep

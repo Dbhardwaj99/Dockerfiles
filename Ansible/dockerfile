@@ -1,4 +1,4 @@
-#install ubuntu 
+# Install Ubuntu
 FROM ubuntu:latest
 
 # Install Ansible dependencies
@@ -18,9 +18,8 @@ RUN apt-get update && apt-get install -y \
     libssl-dev \
     && rm -rf /var/lib/apt/lists/*
 
-# Install Ansible
-# RUN apt-get install -y ansible
-
+# Install Ansible using pip
+RUN pip3 install ansible
 
 # Set the working directory to /ansible
 WORKDIR /ansible
