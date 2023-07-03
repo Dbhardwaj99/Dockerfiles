@@ -1,0 +1,12 @@
+---
+- name: Check Kafka service
+  hosts: 172.17.0.2:9092
+  tasks:
+    - name: Check if Kafka service is running
+      shell: ps -ef | grep kafka | grep -v grep
+      register: kafka_process
+      ignore_errors: true
+
+    - name: Print status
+      debug:
+        msg: "Kafka is {{ 'running' if kafka_process.rc == 0 else 'not running' }}"

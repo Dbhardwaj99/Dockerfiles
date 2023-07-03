@@ -1,0 +1,30 @@
+create a docker network
+`
+docker network create my-network
+`
+
+Build the Ansible image using:
+`
+docker build -t my-ansible-image .
+`
+
+run ansible container
+`
+docker run -d --network my-network --name ansible-container my-ansible-image
+`
+
+check logs
+`
+docker logs ansible-container
+`
+
+Access the container:
+`
+docker exec -it <ansible-container-id> /bin/bash
+`
+
+Example Command:
+Start a shell session inside the Ansible container:
+`
+docker exec -it ansible-container /bin/bash
+`
